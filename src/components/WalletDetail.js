@@ -5,8 +5,7 @@ import './WalletDetail.css';
 import { useParams } from 'react-router-dom';
 
 const WalletDetail = () => {
-  const location = window.location;
-  const id = location.pathname.split('/')[2];
+  const { id } = useParams();
   const { wallet, loading, error, transferMuffins } = useWallet(id);
   const [toWalletId, setToWalletId] = useState('');
   const [amount, setAmount] = useState('');
